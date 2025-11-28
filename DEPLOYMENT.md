@@ -14,6 +14,8 @@ The project includes GitHub Actions workflows that automatically deploy to GitHu
    - Under "Source", select "Deploy from a branch"
    - Select branch: `gh-pages` and folder: `/ (root)`
    - Save the settings
+   - **Important:** The site will be available at: `https://rayraycodes.github.io/vibecodingschool/`
+   - The base path `/vibecodingschool/` is already configured in `vite.config.ts`
 
 2. **Choose a deployment method:**
 
