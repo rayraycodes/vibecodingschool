@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import SectionContent from './components/SectionContent';
-import SearchBar from './components/SearchBar';
 import ThemeToggle from './components/ThemeToggle';
 import { sections, SearchableLessonItem, allLessonItems } from './vibeContent';
 

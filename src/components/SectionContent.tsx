@@ -269,9 +269,10 @@ function LessonItemCard({ item, isExpanded, onToggle, variant = 'default', secti
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
-                code: ({ node, inline, className, children, ...props }) => {
+                code: ({ className, children, ...props }: any) => {
                   const match = /language-(\w+)/.exec(className || '');
-                  return !inline && match ? (
+                  const isInline = !className || !match;
+                  return !isInline ? (
                     <pre className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto mb-4 text-sm text-slate-900 dark:text-slate-100 font-mono leading-relaxed">
                       <code className={`${className} font-mono`} {...props}>
                         {children}

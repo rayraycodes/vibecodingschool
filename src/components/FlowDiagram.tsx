@@ -15,7 +15,7 @@ const flowSteps: FlowStep[] = [
     title: 'Start from Zero',
     description: 'No coding experience needed. Just curiosity and a problem to solve.',
   },
-  ...sections.slice(0, 5).map((section, index) => ({
+  ...sections.slice(0, 5).map((section) => ({
     number: section.order,
     title: section.shortTitle,
     description: section.summary,
