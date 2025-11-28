@@ -47,7 +47,7 @@ export default function Hero({
         {/* Quote Card */}
         <div className="max-w-4xl mx-auto px-4 pt-6">
           <div className="card border-l-4 border-indigo-600 dark:border-indigo-400">
-            <blockquote className="text-sm italic text-slate-700 dark:text-slate-300 leading-[1.7]">
+            <blockquote className="text-base sm:text-lg italic text-slate-700 dark:text-slate-300 leading-[1.7]">
               "Coding is not about memorizing syntax. It's about understanding people, 
               solving problems, and using tools thoughtfully to build things that matter. 
               Start from where you are, with what you have."
