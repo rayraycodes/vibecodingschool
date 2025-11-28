@@ -77,7 +77,7 @@ export default function FlowDiagram() {
                 <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-1">
                   {step.title}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   {step.description}
                 </p>
               </div>

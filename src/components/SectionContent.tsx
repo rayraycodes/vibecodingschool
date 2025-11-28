@@ -52,7 +52,7 @@ export default function SectionContent({ section }: SectionContentProps) {
     <div className="space-y-8 animate-fade-in">
       {/* Header - Matching designforall style */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-3">
           {section.order}. {section.title}
         </h1>
         <div className="flex items-center gap-4 flex-wrap mb-3">
@@ -60,7 +60,7 @@ export default function SectionContent({ section }: SectionContentProps) {
             {timeDisplay}
           </span>
         </div>
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
           {section.summary}
         </p>
       </div>
@@ -69,7 +69,7 @@ export default function SectionContent({ section }: SectionContentProps) {
       {/* Concepts */}
       {concepts.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Concepts</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Concepts</h2>
           <div className="space-y-4">
             {concepts.map((item, index) => (
               <LessonItemCard
@@ -88,7 +88,7 @@ export default function SectionContent({ section }: SectionContentProps) {
       {/* Exercises */}
       {exercises.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Micro Exercises</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Micro Exercises</h2>
           <div className="space-y-4">
             {exercises.map((item, index) => (
               <LessonItemCard
@@ -107,7 +107,7 @@ export default function SectionContent({ section }: SectionContentProps) {
       {/* Vibe Tips */}
       {vibeTips.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Vibe Tips</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Vibe Tips</h2>
           <div className="space-y-4">
             {vibeTips.map((item, index) => (
               <LessonItemCard
@@ -127,7 +127,7 @@ export default function SectionContent({ section }: SectionContentProps) {
       {/* Reflections */}
       {reflections.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Reflection</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Reflection</h2>
           <div className="space-y-4">
             {reflections.map((item, index) => (
               <LessonItemCard
@@ -222,7 +222,7 @@ function LessonItemCard({ item, isExpanded, onToggle, variant = 'default', secti
                 <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
                   {sectionNumber}.{itemNumber}
                 </span>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-slate-100">
                   {item.title}
                 </h3>
               </div>

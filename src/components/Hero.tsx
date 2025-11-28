@@ -35,11 +35,11 @@ export default function Hero({
           Start from where you are, with what you have
         </div>
         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary-light dark:text-text-primary-dark px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary-light dark:text-text-primary-dark px-4">
           VibeCode School
         </h1>
         
-        <p className="text-xl sm:text-2xl text-text-secondary-light dark:text-text-secondary-dark max-w-4xl mx-auto leading-[1.6] px-4">
+        <p className="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-4xl mx-auto leading-[1.6] px-4">
           A one week guide to vibe coding from zero. Learn how to build real web projects 
           that solve problems, starting from people and stories, not from syntax.
         </p>
@@ -47,7 +47,7 @@ export default function Hero({
         {/* Quote Card */}
         <div className="max-w-4xl mx-auto px-4 pt-6">
           <div className="card border-l-4 border-indigo-600 dark:border-indigo-400">
-            <blockquote className="text-xl italic text-slate-700 dark:text-slate-300 leading-[1.7]">
+            <blockquote className="text-sm italic text-slate-700 dark:text-slate-300 leading-[1.7]">
               "Coding is not about memorizing syntax. It's about understanding people, 
               solving problems, and using tools thoughtfully to build things that matter. 
               Start from where you are, with what you have."
