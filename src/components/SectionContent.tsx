@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Section } from '../vibeContent';
+import { Section, sections } from '../vibeContent';
+import { ArrowRight } from 'lucide-react';
 
 type SectionContentProps = {
   section: Section;
+  onNextSection?: () => void;
 };
 
-export default function SectionContent({ section }: SectionContentProps) {
+export default function SectionContent({ section, onNextSection }: SectionContentProps) {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
 
   // Listen for expand events from search navigation
@@ -171,6 +173,72 @@ export default function SectionContent({ section }: SectionContentProps) {
           </div>
         </section>
       )}
+
+      {/* Next Section Navigation */}
+      <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex-1">
+            {(() => {
+              const currentIndex = sections.findIndex(s => s.id === section.id);
+              const nextSection = currentIndex >= 0 && currentIndex < sections.length - 1 
+                ? sections[currentIndex + 1] 
+                : null;
+              
+              if (!nextSection) {
+                return (
+                  <div className="text-center py-8">
+                    <p className="text-base text-slate-600 dark:text-slate-400 mb-4">
+                      🎉 Congratulations! You've completed all sections.
+                    </p>
+                    <button
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        if (onNextSection) {
+                          setTimeout(() => {
+                            window.location.href = '#main-content';
+                          }, 100);
+                        }
+                      }}
+                      className="btn-secondary"
+                    >
+                      Back to Home
+                    </button>
+                  </div>
+                );
+              }
+
+              return (
+                <div className="flex items-center justify-between gap-6">
+                  <div className="flex-1">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
+                      Next Section
+                    </p>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                      {nextSection.order}. {nextSection.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                      {nextSection.summary}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      if (onNextSection) {
+                        onNextSection();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
+                    className="btn-primary flex items-center gap-2 whitespace-nowrap"
+                    aria-label={`Go to next section: ${nextSection.title}`}
+                  >
+                    Next Section
+                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                  </button>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

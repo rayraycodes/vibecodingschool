@@ -175,7 +175,16 @@ function App() {
           )}
 
           {viewMode === 'section' && currentSection && (
-            <SectionContent section={currentSection} />
+            <SectionContent 
+              section={currentSection}
+              onNextSection={() => {
+                const currentIndex = sections.findIndex(s => s.id === currentSection.id);
+                if (currentIndex >= 0 && currentIndex < sections.length - 1) {
+                  const nextSection = sections[currentIndex + 1];
+                  handleSectionClick(nextSection.id);
+                }
+              }}
+            />
           )}
 
         </div>
