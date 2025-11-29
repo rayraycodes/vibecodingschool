@@ -16,16 +16,11 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
-  // Load last opened section and theme from localStorage
+  // Load theme from localStorage (but always start on hero page)
   useEffect(() => {
-    const lastSection = localStorage.getItem('lastOpenedSection');
-    if (lastSection) {
-      const section = sections.find(s => s.id === lastSection);
-      if (section) {
-        setCurrentSectionId(lastSection);
-        setViewMode('section');
-      }
-    }
+    // Don't load last section - always start on hero page
+    setCurrentSectionId(null);
+    setViewMode('hero');
     
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
